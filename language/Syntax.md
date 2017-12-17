@@ -460,6 +460,18 @@ The `if`, `then` and `else` keywords can be used to create conditional expressio
 conditional = if 2 > 1 then "ok" else "oops"
 ```
 
+A binding can be avoided by using a single underscore in place of the condition; in this context the underscore represents an anonymous argument:
+
+``` purescript
+if _ then "ok" else "oops"
+```
+
+This is equivalent to
+
+``` purescript
+\x -> if x then "ok" else "oops"
+```
+
 ## Let and where bindings
 
 The `let` keyword introduces a collection of local declarations, which may be mutually recursive, and which may include type declarations:
